@@ -1,0 +1,51 @@
+---
+---
+
+/*****************************************************************************/
+/*
+/* GENERAL STYLES
+/*
+/*****************************************************************************/
+
+$ct-green: #00ba9f;
+$ct-yellow: #ffba27;
+
+/*****************************************************************************/
+/*
+/* NAVIGATION
+/*
+/*****************************************************************************/
+
+
+
+/*****************************************************************************/
+/*
+/* LEFT STATIC MENU
+/*
+/*****************************************************************************/
+
+.static-menu-left {
+	margin-top: 50px;
+	border-right: 1px solid black;
+	width: 300px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: $ct-green;
+}
+
+ .static-menu-content {
+	padding: 10px;
+	margin: 0;
+	list-style-type: none;
+}
+
+.static-menu-content a {
+	color: black;
+}
+
+.static-menu-content a:hover {
+	text-decoration: none;
+	background: $ct-yellow;
+}

@@ -1,5 +1,4 @@
 name: Your New Jekyll Site
 markdown: redcarpet
-pygments: true
-sass:
-  sass_dir: ../_assets/scss 
+highlighter: pygments
+
