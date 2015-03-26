@@ -3,6 +3,16 @@
 
 /*****************************************************************************/
 /*
+/* TEMPORARY - FOR DEVELOPMENT
+/*
+/*****************************************************************************/
+
+body {
+	height: 10000px;
+}
+
+/*****************************************************************************/
+/*
 /* GENERAL STYLES
 /*
 /*****************************************************************************/
@@ -16,36 +26,84 @@ $ct-yellow: #ffba27;
 /*
 /*****************************************************************************/
 
-
-
-/*****************************************************************************/
-/*
-/* LEFT STATIC MENU
-/*
-/*****************************************************************************/
-
-.static-menu-left {
-	margin-top: 50px;
-	border-right: 1px solid black;
-	width: 300px;
-	height: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: $ct-green;
+.ct-nav {
+	background: white;
+	border-bottom: none;
+	position: relative;
+	margin-bottom: 0;
 }
 
- .static-menu-content {
-	padding: 10px;
-	margin: 0;
-	list-style-type: none;
-}
-
-.static-menu-content a {
+.navbar-inverse .navbar-brand {
 	color: black;
 }
 
-.static-menu-content a:hover {
-	text-decoration: none;
-	background: $ct-yellow;
+.navbar-inverse .navbar-brand:hover {
+	color: $ct-green;
 }
+
+.navbar-inverse .navbar-nav li a {
+	color: black;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+	color: $ct-green;
+}
+
+/*****************************************************************************/
+/*
+/* FIXED RIGHT MENU
+/*
+/*****************************************************************************/
+
+.fixed-menu-right a {
+	border: none;
+}
+
+.fixed-menu-right a:hover {
+	background: none;
+	border-left: 2px solid $ct-yellow;
+}
+
+.fixed-menu-right a:focus {
+	background: none;
+}
+
+.list-group-item {
+	padding: 5px 15px;
+}
+
+/*****************************************************************************/
+/*
+/* CONTENT BODY 
+/*
+/*****************************************************************************/
+
+.ct-jumbotron {
+	background: none;
+	border: 5px solid $ct-green;
+}
+
+/*****************************************************************************/
+/*
+/* FOOTER
+/*
+/*****************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
