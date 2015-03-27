@@ -8,7 +8,7 @@
       <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
     </p>
 
-    <div class="row">
+    <div class="row tutorial-row">
       <div class="col-md-12 text-center">
         <h2>How to create a product bundle</h2>
       </div>
@@ -19,8 +19,26 @@
         <img class="img-responsive center-block" src="/assets/img/bundle_diagram.png" alt="bundle diagram">
       </div>
       <div class="col-md-8 col-md-offset-2">
-        <p>In this tutorial we are going to explain how you can model such product bundles with the data models provided by the SPHERE.IO platform. A general introduction into the data models is given in the Knowledge base article {-->Glossary - Data Models}</p><p>To be able to follow the steps explained in this tutorial you need to have valid credentials for accessing SPHERE.IO projects. If you need assistance with that please have a look at {-->Getting started with SPHERE.IO}</p><p>It is further assumed that there has been defined a ProductType for snowboard bundles beforehand in your project. If you want to know more about ProductType creation for product bundles please get familiar with that topic in tutorial {-->How to create bundle product types}.</p>
+        <p>In this tutorial we are going to explain how you can model such product bundles with the data models provided by the SPHERE.IO platform. A general introduction into the data models is given in the Knowledge base article {-->Glossary - Data Models}</p>
+        <p>To be able to follow the steps explained in this tutorial you need to have valid credentials for accessing SPHERE.IO projects. If you need assistance with that please have a look at {-->Getting started with SPHERE.IO}</p>
+        <p>It is further assumed that there has been defined a ProductType for snowboard bundles beforehand in your project. If you want to know more about ProductType creation for product bundles please get familiar with that topic in tutorial {-->How to create bundle product types}.</p>
+        <h3>1. Extend ProductType</h3>
+        <p>We now need to add the custom attributes board and binding to the bundle ProductType which will hold the references to the snowboard and binding being in the bundle. For applying this update to the ProductType we are going to use the ‘addAttributeDefintion’ action provided by the SPHERE.IO HTTP API<br>{-->http://dev.sphere.io/http-api-projects-productTypes.html#add-attribute-definition}</p>
+        <p>Following JSON payload will update the bundle productType with the custom attributes board and binding when sent to the API endpoint: {projectKey}/product-types/{productType-id}. If you’d like to know more about API endpoints pease find it in {-->API endpoints tutorial}</p>
       </div>
+      
+      <div class="col-md-8 col-md-offset-2"><!-- experimental snippet code styling -->
+          <pre>main {
+          width: 80%;
+          margin: 1em auto;
+          padding: 1em 2em;
+          color: #000;
+          background-color: rgba(255,255,255,.25);
+          border: .07em solid rgba(0,0,0,.5);
+          border-radius: .5em;
+        }  </pre>
+      </div>
+
     </div><!--/row-->
   </div><!--/.col-xs-12.col-sm-9-->
 
