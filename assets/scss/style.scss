@@ -66,6 +66,19 @@ $ct-yellow: #ffba27;
 	color: $ct-green;
 }
 
+// Progress Bar
+
+#container {
+  height: 3px;
+  width: 100%;
+  position: fixed;
+  border-top: 1px solid #E8E8E8; }
+  #container #progress-bar {
+    position: relative;
+    height: 100%;
+    width: 0%;
+    background: #00BA9F; }
+
 /*****************************************************************************/
 /*
 /* FIXED RIGHT MENU / SIDEBAR
@@ -80,6 +93,8 @@ $ct-yellow: #ffba27;
 .fixed-menu-right a:hover {
 	background: none;
 	border-left: 2px solid $ct-yellow;
+	border-radius: 0;
+
 }
 
 .fixed-menu-right a:focus {
@@ -90,6 +105,7 @@ $ct-yellow: #ffba27;
 	background: none;
 	color: #000;
 	border-left: 2px solid $ct-yellow;
+	border-radius: 0;
 }
 
 .list-group-item.active:hover {
