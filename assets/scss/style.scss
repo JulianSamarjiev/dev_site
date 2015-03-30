@@ -3,22 +3,30 @@
 
 /*****************************************************************************/
 /*
-/* TEMPORARY - FOR DEVELOPMENT
+/* TEMPORARY - FOR DEVELOPMENT, TO MAKE THE PAGE SCROLLABLE 
 /*
 /*****************************************************************************/
 
 body {
-	height: 10000px;
+	height: 2000px;
 }
 
 /*****************************************************************************/
 /*
-/* COLORS
+/* GENERAL STYLING
 /*
 /*****************************************************************************/
 
+// Colors
+
 $ct-green: #00ba9f;
 $ct-yellow: #ffba27;
+
+// .row-padding - to push it below the fixed nop nav 
+
+.row-padding-top {
+	padding-top: 60px;
+}
 
 /*****************************************************************************/
 /*
@@ -38,7 +46,6 @@ $ct-yellow: #ffba27;
 .ct-nav {
 	background: white;
 	border-bottom: none;
-	position: relative;
 	margin-bottom: 0;
 }
 
@@ -69,21 +76,27 @@ $ct-yellow: #ffba27;
 // Progress Bar
 
 #container {
-  height: 3px;
-  width: 100%;
-  position: fixed;
-  border-top: 1px solid #E8E8E8; }
-  #container #progress-bar {
+  	height: 2px;
+  	width: 100%;
+  	position: fixed;
+}
+
+#container #progress-bar {
     position: relative;
     height: 100%;
     width: 0%;
-    background: #00BA9F; }
+    background: #00BA9F; 
+}
 
 /*****************************************************************************/
 /*
 /* FIXED RIGHT MENU / SIDEBAR
 /*
 /*****************************************************************************/
+
+#sidebar {
+	padding-top: 60px;
+}
 
 .fixed-menu-right a {
 	border: none;
@@ -140,10 +153,6 @@ $ct-yellow: #ffba27;
 /* TUTORIAL PAGE 
 /*
 /*****************************************************************************/
-
-.tutorial-row {
-	padding-top: 50px;
-}
 
 .tutorial-diagram {
 	padding: 0 0 10px;

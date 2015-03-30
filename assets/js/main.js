@@ -1,4 +1,8 @@
-// Adding active class based on URL
+/*****************************************************************************/
+/*
+/* ADDING .ACTIVE BASED ON URL
+/*
+/*****************************************************************************/
 
 $(function() {
      var pgurl = window.location.href.substr(window.location.href
@@ -9,7 +13,11 @@ $(function() {
      })
 });
 
-// Progress bar 
+/*****************************************************************************/
+/*
+/* PROGRESS BAR 
+/*
+/*****************************************************************************/
 
 $(window).scroll(function() {
   var distanceToTop, documentHeight, percentScrolled, windowHeight;
