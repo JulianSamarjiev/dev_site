@@ -30,9 +30,10 @@ $ct-yellow: #ffba27;
 	content: url("/assets/img/ct_logo.png");
 }
 
-// .developers-logo {
-// 	padding: 5px;
-// }
+.developers-logo {
+	padding: 0 15px;
+	font-size: 16px;
+}
 
 .ct-nav {
 	background: white;
@@ -128,6 +129,9 @@ $ct-yellow: #ffba27;
 	padding-top: 50px;
 }
 
+.tutorial-diagram {
+	padding: 0 0 10px;
+}
 
 
 

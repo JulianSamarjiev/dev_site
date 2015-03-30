@@ -16,7 +16,7 @@
         <p>Let’s assume our shop offers winter sports equipment, namely snowboards, bindings, boots and so on.  The snowboards in this example do not have bindings assembled by default so the customer needs to attach some bindings first before he or she can get out to the slope. Therefore it makes sense to offer the customers some product bundles containing a plain snowboard and a pair of bindings.</p>
       </div>
       <div class="col-md-12">
-        <img class="img-responsive center-block" src="/assets/img/bundle_diagram.png" alt="bundle diagram">
+        <img class="img-responsive center-block tutorial-diagram" src="/assets/img/bundle_diagram.png" alt="bundle diagram">
       </div>
       <div class="col-md-8 col-md-offset-2">
         <p>In this tutorial we are going to explain how you can model such product bundles with the data models provided by the SPHERE.IO platform. A general introduction into the data models is given in the Knowledge base article {-->Glossary - Data Models}</p>
@@ -27,17 +27,90 @@
         <p>Following JSON payload will update the bundle productType with the custom attributes board and binding when sent to the API endpoint: {projectKey}/product-types/{productType-id}. If you’d like to know more about API endpoints pease find it in {-->API endpoints tutorial}</p>
       </div>
       
-      <div class="col-md-8 col-md-offset-2"><!-- experimental snippet code styling -->
-          <pre>main {
-          width: 80%;
-          margin: 1em auto;
-          padding: 1em 2em;
-          color: #000;
-          background-color: rgba(255,255,255,.25);
-          border: .07em solid rgba(0,0,0,.5);
-          border-radius: .5em;
-        }  </pre>
+      <div class="col-md-8 col-md-offset-2"><!-- code snippets -->
+      <pre>{
+  "version": 1,
+  "attributes": [
+    {
+      "type":{
+        "name":"reference",
+        "referenceTypeId":"product"
+      },
+      "name":"board",
+      "label":{"en":"board"}, 
+      "isRequired":true, 
+      "isSearchable":true
+    },
+    {
+      "type":{
+        "name":"reference",
+        "referenceTypeId":"product"
+      }, 
+    "name":"binding",
+    "label":{"en":"binding"}, 
+    "isRequired":true, 
+    "isSearchable":true
+    }
+  ]
+}     </pre>
       </div>
+        
+      <div class="col-md-8 col-md-offset-2">
+        <p>Please make sure you give the correct version number of the ProductType on which the update should be applied! If the expected version does not match the actual version, a 409 Conflict will be returned. More information about Error codes can be found in our article {-->Error codes explained}</p>
+        <p>We just have extended our existing bundle ProductType with two attributes of the ReferenceType listed in the {-->HTTP API Reference}. We further specified that the attributes board and binding contain references to Products.</p>
+        <p>Both attributes were defined as required and searchable. If you want to know more about adding optional attributes, e.g. adding boots to the bundle,  please head to the tutorial {--> enhancing product bundles}</p>
+        <h3>2. Create Product bundle</h3>
+        <p>Now let’s create the bundle “Feather_Cartel” made of following products already stored in our example project {-->Tutorial - How to create a project}:</p>
+      </div>
+      <div class="col-md-12">
+        <img class="img-responsive center-block tutorial-diagram" src="/assets/img/bundle_feather_cartel.png" alt="bundle feather cartel">
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <p>To create the it is enough to specify the references to those two existing products; there is no need to repeat specifications of “Feather 56” and “Cartel R”. Thus the values of attributes board and binding contain the identifiers of those products only. You can retrieve the product identifiers from either the Merchant Center or the SPERE.IO playground. If you are not yet familiar with those tools we recommend you studying the {-->Getting Started tutorial}.</p>
+        <p>The above mentioned product bundle is created by a HTTP POST request on endpoint: {projectKey}/products with following JSON object:</p>
+      </div>
+      <div class="col-md-8 col-md-offset-2"><!-- code snippets -->
+        <pre>{
+  "name": {
+    "en": "Bundle Feather Cartel"
+  },
+  "productType": {
+    "typeId": "product-type",
+    "id": "335c04e3-7967-49e4-8128-04b1bdb07dd7"
+  },
+  "slug": {
+    "en": "feather_cartel"
+  },
+  "description": {
+    "en": "bundle of board Feather 56 and binding Cartel R"
+  },
+  "masterVariant": {
+    "sku": "sku_bundle_feather_cartel",
+    "attributes": [
+      {
+        "name": "board",
+        "value": {
+                "typeId":"product",
+                "id":"eca49b86-56c3-415b-b87d-affed59bb3b7"
+        }
+      },
+      {
+        "name": "binding",
+        "value": {
+                "typeId":"product",
+                "id":"b31c0c25-d00b-40d9-8b6b-78ce78fcf57c"
+        }
+      }
+    ]
+  }
+}       </pre>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <p>If all went well with the bundle product creation you’ll get a response code 201 together with a representation of the Product you just created. In any other case please refer to the {-->Error codes explained} article to find out what went wrong with your request.</p>
+        <p>You should now have the bundle product in your project.</p>
+      </div>
+
+
 
     </div><!--/row-->
   </div><!--/.col-xs-12.col-sm-9-->
